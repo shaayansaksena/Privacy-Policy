@@ -1,3 +1,8 @@
+---
+title: Untangle – Privacy Policy
+layout: default
+---
+
 **Untangle – Privacy Policy**
 
 **Last updated:** Oct 26 2025
