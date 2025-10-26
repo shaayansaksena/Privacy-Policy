@@ -38,19 +38,11 @@ Untangle computes and stores only the minimum needed to show time and insights:
 Nothing. Untangle does not transmit or share your data with any external server, third party, or analytics provider.
 
 **Permissions and why we request them**  
-- `tabs`: Observe active tab changes and attribute time to domains. No page content is read or modified.  
-- `windows`: Know when Chrome is focused so time only counts during active use.  
-- `idle`: Respect away state and apply a short reading grace so passive reading counts.  
-- `alarms`: A lightweight 1-minute pulse that keeps time accurate while reading.  
-- `storage`: Store settings, daily aggregates, and the on-device model (local & session storage).  
-- `webNavigation` (optional): If you enable it in Options, detect SPA route changes to improve tab-churn accuracy. No content is inspected.
-
-**Optional HTTPS site access (origins)**  
-At first use, the popup requests optional host access for `https://*/*`. 
-
-- **Purpose:** Granting this optional HTTPS site access lets Untangle read the active tab’s URL to extract the hostname only, ensuring consistent site‑level attribution across tabs and sessions. Without it, Chrome may not expose URLs to the background service worker, and per‑site time can under‑count. No page content, paths, or parameters are stored. 
-- **Control:** you can accept or decline; you can revoke later at `chrome://extensions` → Untangle → Site access.  
-- **Consent:** the request is shown in Chrome’s permission prompt and in the extension UI on first run. 
+- `tabs`: Observe active tab changes, attribute time to domains, and manage session timing; no page content is read or modified.
+- `windows`: Count time only when Chrome is focused (foreground use).
+- `idle`: Respect away/locked state and apply a brief reading grace to avoid over/under‑counting.  
+- `alarms`: A lightweight 1‑minute pulse that wakes the service worker to keep time accurate during long reads.  
+- `storage`: Store settings, daily aggregates, and the on‑device model in Chrome storage (local + session). Users can export or delete data in Options.
 
 **Security**  
 - All data is kept in Chrome’s local storage on your device.  
@@ -63,8 +55,6 @@ At first use, the popup requests optional host access for `https://*/*`.
 
 **User choices and controls**  
 - Enable or disable tracking in Options or the popup.  
-- Grant or deny HTTPS site access and revoke later in `chrome://extensions`.  
-- Enable or disable SPA route tracking (`webNavigation`) in Options.  
 - Edit categories and productivity flags (Productive/Unproductive/Misc).
 
 **Limited Use disclosure**  
