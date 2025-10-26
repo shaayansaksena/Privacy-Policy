@@ -45,12 +45,12 @@ Nothing. Untangle does not transmit or share your data with any external server,
 - `storage`: Store settings, daily aggregates, and the on-device model (local & session storage).  
 - `webNavigation` (optional): If you enable it in Options, detect SPA route changes to improve tab-churn accuracy. No content is inspected.
 
-**[IMPORTANT] Optional HTTPS site access (origins)**  
-At first use, the popup requests optional host access for `https://*/*`.
+**Optional HTTPS site access (origins)**  
+At first use, the popup requests optional host access for `https://*/*`. Although hostname access is needed for core features, Untangle requests it as an optional host permission to ensure user consent and understanding. When granted, Untangle reads the active tab’s URL to extract the hostname only for time attribution. No page content, paths, or parameters are stored. 
 
-- **Purpose:** allow Untangle to read the active tab’s URL to extract the hostname only for time attribution. No page content or path/parameters are stored.  
+- **Purpose:** allow Untangle to read the active tab’s URL to extract the hostname only for time attribution. This also allows the user to classify domain productivity/categories and access key analysis features. No page content or path/parameters are stored.  
 - **Control:** you can accept or decline; you can revoke later at `chrome://extensions` → Untangle → Site access.  
-- **Consent:** the request is shown in Chrome’s permission prompt and in the extension UI.
+- **Consent:** the request is shown in Chrome’s permission prompt and in the extension UI. 
 
 **Security**  
 - All data is kept in Chrome’s local storage on your device.  
