@@ -5,6 +5,8 @@
 **Overview**  
 Untangle helps you understand your screen habits through clear, on-device analytics. All processing happens locally on your computer. Untangle does not send data to any server or third party.
 
+**The use of information handled by Untangle adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements.**
+
 **What information we process (locally)**  
 Untangle computes and stores only the minimum needed to show time and insights:
 
